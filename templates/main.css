@@ -19,6 +19,7 @@ html, body {
 .flexpage__footer {
   flex-shrink: 0;
 }
+
 .header{
   display: flex;
   flex-direction: column;
@@ -49,6 +50,7 @@ html, body {
   border-width: 2px 0px 2px 0px;
   border-radius: 4px;
 }
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -60,4 +62,21 @@ html, body {
 }
 .footer__phone_number::before {
   content: "Call: ";
+}
+
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.contact_form__label {
+}
+.contact_form__label--required::after {
+  content: " *"
+}
+.contact_form__input {
+  max-width: 100%;
+}
+.contact_form__submit{
+
 }
