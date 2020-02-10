@@ -7,6 +7,7 @@ html, body {
   height: 100%;
   margin-top: 0;
   margin-bottom: 0;
+  margin-right: 8px;
 }
 .flexpage {
   display: flex;
@@ -54,6 +55,7 @@ html, body {
 .footer {
   display: flex;
   justify-content: space-between;
+  font-size: 80%;
 }
 .footer__copyright {
 }
@@ -62,6 +64,11 @@ html, body {
 }
 .footer__phone_number::before {
   content: "Call: ";
+}
+
+.paragraph {}
+.paragraph--justified {
+  text-align: justify;
 }
 
 .contact_form {
