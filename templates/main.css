@@ -4,8 +4,8 @@
   align-items: stretch;
 }
 .header--bigtext {
-  font-family: 'Coda Caption', Futura, 'Century Gothic', AppleGothic, sans-serif;
-
+  font-family: 'Khula', Futura, 'Century Gothic', AppleGothic, sans-serif;
+  font-size: 2rem;
 }
 .header__name {
   align-self: flex-start;
