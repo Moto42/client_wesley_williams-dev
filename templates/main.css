@@ -33,3 +33,12 @@ html {
   border-width: 2px 0px 2px 0px;
   border-radius: 4px;
 }
+.footer {
+  display: flex;
+  justify-content: space-around;
+}
+.footer__copyright {
+}
+.footer__phone_number {
+
+}
