@@ -1,4 +1,6 @@
-<footer class="footer">
+<footer class="footer {% if class -%}
+  {{class}}
+{%- endif -%}">
 <a href="tel:{{ contact.phone_number }}" class="footer__phone_number phone_number">
   {{contact.contact_phone_text}}
 </a>

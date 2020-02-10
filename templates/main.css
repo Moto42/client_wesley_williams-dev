@@ -3,6 +3,22 @@ html {
   --color_text: black;
   --font_headings: 'Khula', Futura, 'Century Gothic', AppleGothic, sans-serif;
 }
+html, body {
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.flexpage {
+  display: flex;
+  flex-direction: column;
+}
+/* .flexpage__header {} */
+.flexpage__content {
+  flex: 1 0 auto;
+}
+.flexpage__footer {
+  flex-shrink: 0;
+}
 .header{
   display: flex;
   flex-direction: column;

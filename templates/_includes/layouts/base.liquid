@@ -15,9 +15,11 @@ permalink: "{{ page.filePathStem }}.html"
 
     <title>{{title}}</title>
   </head>
-  <body>
-    {% include header %}
-    {{- content -}}
-    {% include footer %}
+  <body class="flexpage">
+    {% include header  %}
+    <div class="flexpage__content">
+      {{ content }}
+    </div>
+    {% include footer with {class:"flexpage__footer"} %}
   </body>
 </html>
