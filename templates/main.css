@@ -1,6 +1,26 @@
-.header{}
-.header__name{}
-.header__job{}
-.navmenu{}
-.navmenu__link{}
-.navmenu__link--you_are_here{}
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.header--bigtext {
+  font-family: 'Coda Caption', Futura, 'Century Gothic', AppleGothic, sans-serif;
+
+}
+.header__name {
+  align-self: flex-start;
+}
+.header__job{
+  align-self: flex-end;
+}
+font-family:
+.navmenu{
+  display: flex;
+  justify-content: space-around;
+}
+.navmenu__link{
+
+}
+.navmenu__link--you_are_here{
+
+}
