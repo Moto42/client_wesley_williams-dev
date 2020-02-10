@@ -35,10 +35,13 @@ html {
 }
 .footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .footer__copyright {
 }
 .footer__phone_number {
 
+}
+.footer__phone_number::before {
+  content: "Call: ";
 }
