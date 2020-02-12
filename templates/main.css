@@ -30,11 +30,11 @@ html, body {
   font-family: var(--font_headings);
   font-size: 2rem;
 }
-.header__name {
-  align-self: flex-start;
+.header--close_text {
+  line-height: 1;
 }
-.header__job{
-  align-self: flex-end;
+.header__spacer_text {
+  color: transparent;
 }
 .navmenu{
   display: flex;
