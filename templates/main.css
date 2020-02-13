@@ -4,9 +4,11 @@ html {
   --font_headings: 'Khula', Futura, 'Century Gothic', AppleGothic, sans-serif;
 }
 html, body {
-  height: 100%;
+  min-height: 100vh;
+  height: auto !important;
   width: 100%;
   margin: 0;
+  -webkit-overflow-scrolling: touch;
 }
 .flexpage {
   display: flex;
@@ -27,7 +29,8 @@ html, body {
   justify-content: space-between;
   align-items:center;
   width: 100%;
-  margin-top: 3px;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
 }
 .header--column {
   flex-direction: column;
