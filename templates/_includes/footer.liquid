@@ -1,9 +1,16 @@
 <footer class="footer {% if class -%}
   {{class}}
-{%- endif -%}">
-<a href="tel:{{ contact.phone_number }}" class="footer__phone_number phone_number">
-  {{contact.contact_phone_text}}
-</a>
-<div class="footer__copyright">&copy; 2020 Wesley Williams</div>
+  {%- endif -%}">
+  <a class="footer__phone_number phone_number"
+    href="tel:{{ contact.phone_number }}"
+    >
+    {{contact.contact_phone_text}}
+  </a>
+  <a class="footer__email"
+    href="mailto:{{contact.email_address}}?subject=feedback"
+    >
+    {{contact.email_address}}
+  </a>
+  <div class="footer__copyright">&copy; 2020 Wesley Williams</div>
 
 </footer>

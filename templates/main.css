@@ -72,9 +72,10 @@ html, body {
 
 .footer {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
   font-size: 80%;
-  width: 100%
+  width: 100%;
 }
 .footer__copyright {
 }
@@ -83,6 +84,9 @@ html, body {
 }
 .footer__phone_number::before {
   content: "Call: ";
+}
+.footer__email {
+
 }
 
 .paragraph {}
