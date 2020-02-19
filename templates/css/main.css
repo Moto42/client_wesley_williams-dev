@@ -1,15 +1,34 @@
+
 /* color and font stack definitions */
 html {
   --color_text: black;
   --font_headings: 'Khula', Futura, 'Century Gothic', AppleGothic, sans-serif;
 }
+
 html, body {
   min-height: 100vh;
-  height: auto !important;
+  height: auto;
   width: 100%;
   margin: 0;
   -webkit-overflow-scrolling: touch;
 }
+
+h1 {
+  font-size: 1.802em;
+}
+h2 {
+  font-size: 1.602em;
+}
+h3 {
+  font-size: 1.424em;
+}
+h4 {
+  font-size: 1.266em;
+}
+h5 {
+  font-size: 1.125em;
+}
+
 .flexpage {
   display: flex;
   flex-direction: column;
