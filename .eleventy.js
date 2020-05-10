@@ -18,7 +18,7 @@ module.exports = function(eleventyConfig) {
   // eleventyConfig.addPassthroughCopy("templates/FILEPATH");
   eleventyConfig.addPassthroughCopy("templates/images");
   eleventyConfig.addPassthroughCopy("templates/scripts");
-  eleventyConfig.addPassthroughCopy("templates/main.css");
+  eleventyConfig.addPassthroughCopy("templates/css");
 
 
   return configObject;
