@@ -166,12 +166,13 @@ h5 {
 }
 
 .heroPanel {
-  background-color: var(--color_invert_background);
-  background-image: image('/images/city.jpg');
+  background-image: url(/images/city.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position:25% 30%;
+  min-height: 100px;
 }
-.heroPanel__bg {
 
-}
 .heroPanel__text {
   color: var(--color_invert_text);
 }
