@@ -1,7 +1,7 @@
 
 /* color and font stack definitions */
 html {
-  --color_main_text: black;
+  --color_main_text: #6d6e73;
   --color_main_background: white;
   --color_invert_text: var(--color_main_background);
   --color_invert_background: var(--color_main_text);
@@ -9,6 +9,7 @@ html {
   --color_alt_background: white;
   --color_important_text: white;
   --color_important_background: orange;
+  --color_look_at_me: #e3b153;
 
   --font_main: 'Khula', Futura, 'Century Gothic', AppleGothic, sans-serif;
 }
@@ -19,22 +20,29 @@ html, body {
   margin: 0;
   -webkit-overflow-scrolling: touch;
   font-family: var(--font_main);
+  font-size: 1.02rem;
+  color: var(--color_main_text);
+  background: var(--color_main_background);
 }
 
-h1 {
-  font-size: 1.802em;
+h1, .h1 {
+  font-size: 1.802rem;
 }
-h2 {
-  font-size: 1.602em;
+h2, .h2 {
+  font-size: 1.602rem;
 }
-h3 {
-  font-size: 1.424em;
+h3, .h3 {
+  font-size: 1.424rem;
 }
-h4 {
-  font-size: 1.266em;
+h4, .h4 {
+  font-size: 1.266rem;
 }
-h5 {
-  font-size: 1.125em;
+h5, .h5 {
+  font-size: 1.125rem;
+}
+
+p {
+  line-height: 1.3em;
 }
 
 .flexpage {
@@ -110,6 +118,13 @@ h5 {
   justify-content: space-around;
   font-size: 80%;
   width: 100%;
+  color: var(--color_invert_text);
+  background: var(--color_invert_background);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.footer a, .footer a:visited {
+  color: var(--color_invert_text);
 }
 .footer__copyright {
 }
@@ -155,7 +170,7 @@ h5 {
 .ffb__feature {
   background-color: var(--color_alt_background);
   color: var(--color_alt_text);
-  font-size: 2rem;
+  font-weight: 555;
 }
 .ffb__function {
 
@@ -165,14 +180,49 @@ h5 {
   font-size: 1.05rem;
 }
 
-.heroPanel {
-  background-image: url(/images/city.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position:25% 30%;
-  min-height: 100px;
+.button {
+  border: 2px solid var(--color_main_text);
+  border-radius: 1ch;
+  background: var(--color_main_background);
+  padding: 0.2em 0.2em 0.0em 0.2em;
+  width: max-content;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+}
+.button:hover {
+  filter: brightness(105%);
+}
+.button:active {
+  filter: brightness(95%);
+}
+.button--lookatme {
+  color: white;
+  border-color: white;
+  background: var(--color_look_at_me);
 }
 
+.heroPanel {
+  --lgc: rgba(37, 99, 153, 0.25);
+  background: url(/images/river.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 53%;
+  background-size: 130%;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: .8ch;
+  padding-right: .8ch;
+}
 .heroPanel__text {
   color: var(--color_invert_text);
+  text-shadow: 0 0 10px black;
+  font-weight: 500;
+}
+.heroPanel__call_to_action {
+
+}
+.heroPanel__button {
+  align-self: flex-end;
 }

@@ -1,0 +1,31 @@
+{%- comment %}
+  Creates a hero panel with some text in an h1 tag and an image.
+  And an optional call to action button.
+  Call with{} the following parameters:
+  text: required, string
+        The text to display in the in the. May be an empty string.
+  button: optional, string
+          the text to display in the button.
+          If left null, the button will not appear.
+  action: required if 'button' is set, string url
+          the url the button element should link to
+{% endcomment -%}
+
+{%- comment %}
+	May upgrade later: Add another optional parameter 'headinglevel' to define what
+  tag the text should be in. (h1, h2, h3...) Default to h1.
+{% endcomment -%}
+
+<div class="heroPanel">
+  <div class="heroPanel__bg"></div>
+  {% if button != blank -%}
+  <a
+    class="heroPanel__button button button--lookatme"
+    role="button"
+    href="{{action}}"
+  >
+    {{button}}
+  </a>
+  {%- endif %}
+  <h1 class="heroPanel__text">{{text}}</h1>
+</div>
