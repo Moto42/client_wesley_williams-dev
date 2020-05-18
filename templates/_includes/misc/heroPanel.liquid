@@ -4,6 +4,18 @@
   Call with{} the following parameters:
   text: required, string
         The text to display in the in the. May be an empty string.
+  image: optional, url
+          URL to image to use as the image in this panel.
+          Overides a default set in the .heroPanel css.
+  imagePosX: optional string
+             sets the X position for the 50% of the image.
+             defaults to center
+  imagePosY: optional string
+             sets the Y position for the 50% of the image.
+             defaults to center
+  imageSize: optional string
+             Sets the size of the image.
+             defaults to 100%;
   button: optional, string
           the text to display in the button.
           If left null, the button will not appear.
@@ -16,7 +28,15 @@
   tag the text should be in. (h1, h2, h3...) Default to h1.
 {% endcomment -%}
 
-<div class="heroPanel">
+<div class="heroPanel"
+  {%- if image != blank -%}
+    style="
+      background:url({{image}});
+      background-position:{{imagePosX | default: '50%'}} {{imagePosY | default: '50%'}};
+      background-size:{{imageSize | default: '100%'}}
+    "
+  {%- endif -%}
+>
   <div class="heroPanel__bg"></div>
   {% if button != blank -%}
   <a
