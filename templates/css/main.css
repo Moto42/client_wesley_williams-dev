@@ -170,10 +170,14 @@ p {
 .ffb {
   margin:.5ch 0ch .5ch 0ch;
 }
+.ffb > p {
+  margin: 0;
+}
 .ffb__feature {
   background-color: var(--color_alt_background);
   color: var(--color_alt_text);
   font-weight: 555;
+  line-height: 1.2em;
 }
 .ffb__function {
 
