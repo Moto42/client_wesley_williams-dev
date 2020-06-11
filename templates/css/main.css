@@ -233,3 +233,7 @@ p {
 .heroPanel__button {
   align-self: flex-end;
 }
+
+.grecaptcha-badge {
+  display: none !important;
+}

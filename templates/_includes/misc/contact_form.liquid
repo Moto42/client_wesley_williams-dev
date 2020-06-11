@@ -1,4 +1,14 @@
-<form class="contact_form" action="TODO: Contact action">
+
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+  function onSubmit(token) {
+    document.getElementById("contact_form").submit();
+  }
+</script>
+
+
+
+<form id="contact_form" class="contact_form" action="/php/contactFormHandler.php" method='post'>
   <label for="name"
     class="contact_form__label contact_form__label--required"
   >Name</label>
@@ -42,8 +52,11 @@
     rows="8"
     required
   ></textarea>
-  <input value="Send"
-    class="contact_form__submit"
-    type="submit"
-  >
+  <button class="g-recaptcha contact_form__submit"
+    data-sitekey="6LeFb6MZAAAAAG-ztv_3s_zWNZsonkxmSXQA1HGR"
+    data-callback='onSubmit'
+    data-action='submit'>
+    Send
+  </button>
+
 </form>
