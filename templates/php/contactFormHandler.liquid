@@ -2,8 +2,138 @@
 layout: layouts/base
 permalink: "{{ page.filePathStem }}.php"
 ---
+
+{%- comment %}
+name
+business_name
+phone_number
+email
+message
+g-recaptcha-response`
+{% endcomment -%}
+
 <?php
+  error_reporting(E_ALL ^ E_WARNING);
+
+  $gRecaptchaResponse = $_POST["g-recaptcha-response"];
+  $gSecret = "6LeFb6MZAAAAAHoNZA11gvVDQ7jjcWmHq_PaQkw1";
+
+  $url = 'https://www.google.com/recaptcha/api/siteverify?'
+    .'secret='.$gSecret
+    .'&response='.$gRecaptchaResponse
+  ;
+
+  $options = array(
+    'https' => array (
+      'method' => 'POST'
+    ),
+  );
+
+  $context  = stream_context_create($options);
+  $verify = file_get_contents($url, false, $context);
+  $captcha_success=json_decode($verify);
 
 ?>
-<main>
+
+<?php if($captcha_success->success) {
+  // Assembling email
+  $headers  = 'MIME-Version: 1.0' . "\r\n";
+  $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+  $headers .= 'From: Postmaster';
+
+  $from       = '<p><strong>From</strong>: ' . $_POST["name"] . "</p>";
+  $business   = '<p><strong>Business</strong>:' . $_POST["business_name"] . "</a></p>";
+  $email      = '<p><strong>Email</strong>: <a href="mailto:' .$_POST["email"] .'">' . $_POST["email"] . "</a></p>";
+  $phone      = '<p><strong>Phone</strong>: <a href="tel:' .$_POST["phone_number"] .'">' . $_POST["phone_number"] . "</a></p>";
+  $message    = '<p><strong>Message</strong><br>: ' . $_POST["message"] . "</p>";
+
+  $email_body ='<html><body>' . $from . $business . $email . $phone  . $message . '</body></html>';
+
+  //Sending email
+  mail("moto42@gmail.com.com","Website Lead",$email_body, $headers);
+?>
+  <h2>Thank you for reaching out to us.</h2>
+  <p>We appreciate your message, and will get back to you as soon as possible.</p>
+  <p>Thank You</p>
+  <script type="text/javascript">setTimeout("window.location.replace('https://www.hirewesley.com');", 8000);</script>
+
+  <?php
+
+
+// End of if($captcha_success->success) block.
+} else {
+?>
+  <h2>Captcha Error</h2>
+  <p>I appologize. Something went wrong with the ReCaptcha verification.</p>
+  <p>Please resubmit the form below, or email me at <a href="mailto:wesley@hirewesley.com?subject=feedback">wesley@hirewesley.com</a>.</p>
+
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById("contact_form").submit();
+    }
+  </script>
+
+  <form id="contact_form" class="contact_form" action="/php/contactFormHandler.php" method='post'>
+    <label for="name"
+      class="contact_form__label contact_form__label--required"
+    >Name</label>
+    <input name="name"
+      value = "<?php echo $_POST['name'] ?>"
+      class="contact_form__input"
+      type="text"
+      placeholder="Your Name"
+      required
+    >
+    <label for="business_name"
+      class="contact_form__label"
+    >Business Name</label>
+    <input name="business_name"
+      value = "<?php echo $_POST['business_name'] ?>"
+      class="contact_form__input"
+      type="text"
+      placeholder="Business Name"
+    >
+    <label for="phone_number"
+      class="contact_form__label contact_form__label--required"
+    >Phone</label>
+    <input name="phone_number"
+      value = "<?php echo $_POST['phone_number'] ?>"
+      class="contact_form__input"
+      type="tel"
+      placeholder="Phone Number"
+      required
+    >
+    <label for="email"
+      class="contact_form__label contact_form__label--required"
+    >Email</label>
+    <input name="email"
+      value = "<?php echo $_POST['email'] ?>"
+      class="contact_form__input"
+      type="email"
+      placeholder="Email@address.com"
+      required
+    >
+    <label for="name"
+      class="contact_form__label contact_form__label--required"
+    >Message</label>
+    <textarea name="message"
+      class="contact_form__input"
+      rows="8"
+      required
+    ><?php  echo $_POST['message'] ?></textarea>
+    <button class="g-recaptcha contact_form__submit"
+      data-sitekey="6LeFb6MZAAAAAG-ztv_3s_zWNZsonkxmSXQA1HGR"
+      data-callback='onSubmit'
+      data-action='submit'>
+      Send
+    </button>
+
+  </form>
+
+<?php
+// End of if($captcha_success->success) else block.
+} ?>
+
+
 </main>
