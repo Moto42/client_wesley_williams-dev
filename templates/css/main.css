@@ -51,16 +51,16 @@ p {
   align-items: center;
 }
 .flexpage__header {}
-  .flexpage__content {
+.flexpage__content {
     flex: 1 0 auto;
     align-self: flex-start;
     width: 100%;
   }
-  .flexpage__footer {
+.flexpage__footer {
     flex-shrink: 0;
   }
 
-  .header{
+.header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -71,51 +71,51 @@ p {
     background-color: var(--color_main_background);
     color: var(--color_main_text);
   }
-  .header--column {
+.header--column {
     flex-direction: column;
   }
 
-  .header--bigtext {
+.header--bigtext {
     font-size: 1.7rem;
     font-weight: bold;
     color: inherit;
     text-decoration: none;
     cursor: default;
   }
-  .header--close_text {
+.header--close_text {
     line-height: 1;
   }
-  .header__spacer_text {
+.header__spacer_text {
     color: transparent;
     user-select: none;
   }
-  @media only speech {
+@media only speech {
     .header__spacer_text {
       display: none;
     }
   }
-  .navmenu{
+.navmenu{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
     padding-right: 1ch;
   }
-  .header--column .navmenu {
+.header--column .navmenu {
     flex-direction: row-reverse;
   }
-  .navmenu__link,
-  .navmenu__link:visited {
+.navmenu__link,
+.navmenu__link:visited {
     text-decoration: none;
     font-weight: bold;
     line-height: 1.2;
     color: var(--color_main_text);
   }
-  .navmenu__link--you_are_here,
-  .navmenu__link--you_are_here:visited {
+.navmenu__link--you_are_here,
+.navmenu__link--you_are_here:visited {
   }
 
-  .footer {
+.footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -126,22 +126,22 @@ p {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
-  .footer a, .footer a:visited {
+.footer a, .footer a:visited {
     color: var(--color_invert_text);
   }
-  .footer__copyright {
+.footer__copyright {
   }
-  .footer__phone_number {
+.footer__phone_number {
 
   }
-  .footer__phone_number::before {
+.footer__phone_number::before {
     content: "Call: ";
   }
-  .footer__email {
+.footer__email {
 
   }
 
-  .paragraph {}
+.paragraph {}
     .paragraph--justified {
       text-align: justify;
     }
