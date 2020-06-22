@@ -27,18 +27,23 @@ html, body {
 
 h1, .h1 {
   font-size: 1.802rem;
+  color: var(--color_alt_text);
 }
 h2, .h2 {
   font-size: 1.602rem;
+  color: var(--color_alt_text);
 }
 h3, .h3 {
   font-size: 1.424rem;
+  color: var(--color_alt_text);
 }
 h4, .h4 {
   font-size: 1.266rem;
+  color: var(--color_alt_text);
 }
 h5, .h5 {
   font-size: 1.125rem;
+  color: var(--color_alt_text);
 }
 
 p {
