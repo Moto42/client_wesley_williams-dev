@@ -1,0 +1,22 @@
+{
+  "name": "client_wesley_williams-dev",
+  "version": "1.0.0",
+  "description": "This is freelance web development site for Wesley Williams.",
+  "main": ".eleventy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moto42/client_wesley_williams-dev.git"
+  },
+  "author": "Wesley Williams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moto42/client_wesley_williams-dev/issues"
+  },
+  "homepage": "https://github.com/Moto42/client_wesley_williams-dev#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.0"
+  }
+}
