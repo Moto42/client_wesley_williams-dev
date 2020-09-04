@@ -1,0 +1,235 @@
+
+/* color and font stack definitions */
+html {
+  --color_main_text: #6d6e73;
+  --color_main_background: white;
+  --color_invert_text: var(--color_main_background);
+  --color_invert_background: var(--color_main_text);
+  --color_alt_text: dodgerblue;
+  --color_alt_background: white;
+  --color_important_text: white;
+  --color_important_background: orange;
+  --color_look_at_me: #e3b153;
+
+  --font_main: 'Khula', Futura, 'Century Gothic', AppleGothic, sans-serif;
+}
+
+html, body {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+  font-family: var(--font_main);
+  font-size: 1.02rem;
+  color: var(--color_main_text);
+  background: var(--color_main_background);
+}
+
+h1, .h1 {
+  font-size: 1.802rem;
+}
+h2, .h2 {
+  font-size: 1.602rem;
+}
+h3, .h3 {
+  font-size: 1.424rem;
+}
+h4, .h4 {
+  font-size: 1.266rem;
+}
+h5, .h5 {
+  font-size: 1.125rem;
+}
+
+p {
+  line-height: 1.3em;
+}
+
+.flexpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flexpage__header {}
+.flexpage__content {
+  flex: 1 0 auto;
+  align-self: flex-start;
+  width: 100%;
+}
+.flexpage__footer {
+  flex-shrink: 0;
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+  width: 100%;
+  padding-top: .3rem;
+  padding-bottom: .3rem;
+  background-color: var(--color_main_background);
+  color: var(--color_main_text);
+}
+.header--column {
+  flex-direction: column;
+}
+
+.header--bigtext {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: inherit;
+  text-decoration: none;
+  cursor: default;
+}
+.header--close_text {
+  line-height: 1;
+}
+.header__spacer_text {
+  color: transparent;
+  user-select: none;
+}
+@media only speech {
+  .header__spacer_text {
+    display: none;
+  }
+}
+.navmenu{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-right: 1ch;
+}
+.header--column .navmenu {
+  flex-direction: row-reverse;
+}
+.navmenu__link,
+.navmenu__link:visited {
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1.2;
+  color: var(--color_main_text);
+}
+.navmenu__link--you_are_here,
+.navmenu__link--you_are_here:visited {
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 80%;
+  width: 100%;
+  color: var(--color_invert_text);
+  background: var(--color_invert_background);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.footer a, .footer a:visited {
+  color: var(--color_invert_text);
+}
+.footer__copyright {
+}
+.footer__phone_number {
+
+}
+.footer__phone_number::before {
+  content: "Call: ";
+}
+.footer__email {
+
+}
+
+.paragraph {}
+.paragraph--justified {
+  text-align: justify;
+}
+
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.contact_form__label {
+}
+.contact_form__label--required::after {
+  content: " *"
+}
+.contact_form__input {
+  max-width: 100%;
+}
+.contact_form__submit{
+
+}
+
+.background_paralax {
+
+}
+
+.ffb {
+  margin:.5ch 0ch .5ch 0ch;
+}
+.ffb > p {
+  margin: 0;
+}
+.ffb__feature {
+  background-color: var(--color_alt_background);
+  color: var(--color_alt_text);
+  font-weight: 555;
+  line-height: 1.2em;
+}
+.ffb__function {
+
+}
+.ffb__benefit {
+  font-weight: 590;
+  font-size: 1.05rem;
+}
+
+.button {
+  border: 2px solid var(--color_main_text);
+  border-radius: 1ch;
+  background: var(--color_main_background);
+  padding: 0.2em 0.2em 0.0em 0.2em;
+  width: max-content;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+}
+.button:hover {
+  filter: brightness(105%);
+}
+.button:active {
+  filter: brightness(95%);
+}
+.button--lookatme {
+  color: white;
+  border-color: white;
+  background: var(--color_look_at_me);
+}
+
+.heroPanel {
+  --lgc: rgba(37, 99, 153, 0.25);
+  background: url(/images/river.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 53%;
+  background-size: 130%;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: .8ch;
+  padding-right: .8ch;
+}
+.heroPanel__text {
+  color: var(--color_invert_text);
+  text-shadow: 0 0 10px black;
+  font-weight: 500;
+}
+.heroPanel__call_to_action {
+
+}
+.heroPanel__button {
+  align-self: flex-end;
+}
