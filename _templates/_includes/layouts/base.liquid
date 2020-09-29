@@ -1,0 +1,25 @@
+---
+title: "Wesley Williams"
+permalink: "{{ page.filePathStem }}.html"
+---
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <title>{{title}}</title>
+  </head>
+  <body class="flexpage">
+    {% include header  %}
+    <div class="flexpage__content">
+      {{ content }}
+    </div>
+    {% include footer with {class:"flexpage__footer"} %}
+  </body>
+</html>
